@@ -9,8 +9,8 @@ bot.on("ready", () => {
   
 });
 
-bot.on("guildMemberSpeaking ", (member, bool) => {
-  var txtMessage = {member.display_name}+ ' spoke';
+bot.on("guildMemberSpeaking", (member, bool) => {
+  var txtMessage = member.display_name+ ' spoke';
     console.log(txtMessage);
  
   //bot.send(txtMessage);
