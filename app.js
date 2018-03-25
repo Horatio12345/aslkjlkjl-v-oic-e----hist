@@ -4,16 +4,23 @@ const config = require("./config.json");
 
 
 bot.on("ready", () => {  
-  console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} guilds.`); 
+  
   // join the correct text channel
   
 });
 
-bot.on("guildMemberSpeaking", (member, bool) => {
-  //var txtMessage = member.display_name+ ' spoke';
-    console.log(`spoke`);
- 
-  //bot.send(txtMessage);
+bot.on("message", (message) => {
+  if (message.content.startsWith("ping")) {
+    message.channel.send("pong!");
+  }
 });
+
+//
+//bot.on("guildMemberSpeaking", (member, bool) => {
+//  //var txtMessage = member.display_name+ ' spoke';
+//    console.log(`spoke`);
+// 
+//  //bot.send(txtMessage);
+//});
 
 bot.login(config.token);
