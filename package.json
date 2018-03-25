@@ -8,7 +8,6 @@
     "npm": "*"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "repository": {
@@ -19,13 +18,13 @@
     "heroku",
     "discord.js"
   ],
-  "author": "synicalsyntax",
+  "author": "someone",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/synicalsyntax/discord.js-heroku/issues"
   },
   "homepage": "https://github.com/synicalsyntax/discord.js-heroku#readme",
   "dependencies": {
-    "discord.js": "^11.3.0"
+    "discord.js": ">=11.3.0"
   }
 }
