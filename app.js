@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = new Discord.bot();
+const bot = new Discord.Client();
 const config = require("./config.json");
 
 
@@ -10,8 +10,8 @@ bot.on("ready", () => {
 });
 
 bot.on("guildMemberSpeaking", (member, bool) => {
-  var txtMessage = member.display_name+ ' spoke';
-    console.log(txtMessage);
+  //var txtMessage = member.display_name+ ' spoke';
+    console.log(`spoke`);
  
   //bot.send(txtMessage);
 });
