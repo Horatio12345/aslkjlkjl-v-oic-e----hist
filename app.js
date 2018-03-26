@@ -15,12 +15,12 @@ bot.on("message", (message) => {
   }
 });
 
-//
-//bot.on("guildMemberSpeaking", (member, bool) => {
-//  //var txtMessage = member.display_name+ ' spoke';
-//    console.log(`spoke`);
-// 
-//  //bot.send(txtMessage);
-//});
+
+bot.on("guildMemberSpeaking", (member, bool) => {
+  //var txtMessage = member.display_name+ ' spoke';
+  bot.channels.get(427355139431464981).send('hello');
+ 
+  //bot.send(txtMessage);
+});
 
 bot.login(config.token);
