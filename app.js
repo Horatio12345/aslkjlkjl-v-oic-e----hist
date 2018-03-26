@@ -4,10 +4,10 @@ const config = require("./config.json");
 
 bot.on("ready", () => {    
   // join the correct voice channel 
-//  let vChannel = bot.channels.get('427352629379727364');  
-//   vChannel.join()
-//   		.then(connection => console.log('Connected'))
-//  		.catch(console.error);
+  let vChannel = bot.channels.get('427352629379727364');  
+   vChannel.join()
+   		.then(connection => console.log('Connected'))
+  		.catch(console.error);
 });
 
 bot.on("message", (message) => {
