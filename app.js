@@ -13,7 +13,8 @@ bot.on("ready", () => {
 bot.on("guildMemberSpeaking", (member, bool) => { 
 	if (bool) {
 	let hChannel = bot.channels.get(process.env.TCHANNEL);
-	  hChannel.send('```css\n '+member.displayName+'```');
+	  // hChannel.send('```css\n '+member.displayName+'```');
+	hChannel.send(' `'+member.displayName+'`  ');
 	}  
 
 });
