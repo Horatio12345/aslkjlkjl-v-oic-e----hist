@@ -10,6 +10,10 @@ bot.on("message", (message) => {
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
   }
+  if (message.content.startsWith("direct")) {
+	channel = client.get_channel(427355139431464981)
+  channel.send('hello');
+  }
 });
 
 bot.on("guildMemberSpeaking", (member, bool) => { 
