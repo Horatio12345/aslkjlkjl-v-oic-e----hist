@@ -4,24 +4,27 @@ const config = require("./config.json");
 
 bot.on("ready", () => {    
   // join the correct voice channel 
-  let channel = bot.channels.get('427352629379727364');  
-   channel.join();
+  let vChannel = bot.channels.get('427352629379727364');  
+   vChannel.join();
+   		.then(connection => console.log('Connected'))
+  		.catch(console.error);
 });
 
 bot.on("message", (message) => {
+	
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
   }
   if (message.content.startsWith("direct")) {
-//	let channel = bot.get_channel(427355139431464981);
-//  channel.send('hello');
+	let hChannel = bot.channels.get('427355139431464981');
+  hChannel.send('hello');
   }
 });
 
 bot.on("guildMemberSpeaking", (member, bool) => { 
 	
-//	bot.channels.id=(427355139431464981);
-//  channel.send('hello');
+	let hChannel = bot.channels.get('427355139431464981');
+  hChannel.send('voice');
   
   //427355139431464981  log text channel
   //427352629379727364  General voice channel
