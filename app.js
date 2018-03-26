@@ -24,10 +24,9 @@ bot.on("ready", () => {
 bot.on("guildMemberSpeaking", (member, bool) => { 
 	if (bool) {
 	let hChannel = bot.channels.get(process.env.TCHANNEL);
-  hChannel.send('**'+member.displayName+'**');
-}  
-  //427355139431464981  log text channel
-  //427352629379727364  General voice channel
+	  hChannel.send('**'+member.displayName+'**');
+	}  
+
 });
 bot.login(process.env.TOKEN);
 //bot.login(config.token);
