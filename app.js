@@ -23,10 +23,10 @@ bot.on("ready", () => {
 //  }
 //});
 
-bot.on("guildMemberSpeaking", (member, bool) => { 
+bot.on("guildMemberSpeaking", (member.display_name, bool) => { 
 	if (bool) {
 	let hChannel = bot.channels.get('427355139431464981');
-  hChannel.send(member);
+  hChannel.send(member.displayName);
 }
   
   //427355139431464981  log text channel
