@@ -4,8 +4,7 @@ const config = require("./config.json");
 
 bot.on("ready", () => {    
   // join the correct voice channel 
- // let 
-  channel = client.channels.get('427352629379727364');  
+  let channel = client.channels.get('427352629379727364');  
 });
 
 bot.on("message", (message) => {
