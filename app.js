@@ -19,7 +19,7 @@ var hour=String("0"+d.getUTCHours()).slice(-2);
 var min=String("0"+d.getUTCMinutes()).slice(-2);
 var sec=String("0"+d.getUTCSeconds()).slice(-2);
 //[11:22:33]
-hChannel.send('`['+hour+':'+min+':'+sec+']   '+member.displayName+'`');
+hChannel.send('`['+hour+':'+min+':'+sec+']`   '+member.displayName+' ');
 	//hChannel.send(' '+member.displayName+'  ');		
 	}  
 
