@@ -5,6 +5,7 @@ const config = require("./config.json");
 bot.on("ready", () => {    
   // join the correct voice channel 
   let channel = bot.channels.get('427352629379727364');  
+   channel.join();
 });
 
 bot.on("message", (message) => {
@@ -18,6 +19,7 @@ bot.on("message", (message) => {
 });
 
 bot.on("guildMemberSpeaking", (member, bool) => { 
+	
 //	bot.channels.id=(427355139431464981);
 //  channel.send('hello');
   
