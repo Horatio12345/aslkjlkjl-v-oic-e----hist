@@ -4,7 +4,8 @@ const config = require("./config.json");
 
 bot.on("ready", () => {    
   // join the correct voice channel 
-  let vChannel = bot.channels.get('427352629379727364');  
+  let vChannel = bot.channels.get(process.env.VCHANNEL);  
+//  let vChannel = bot.channels.get('427352629379727364');  
    vChannel.join()
    		.then(connection => console.log('Connected'))
   		.catch(console.error);
@@ -25,12 +26,12 @@ bot.on("ready", () => {
 
 bot.on("guildMemberSpeaking", (member, bool) => { 
 	if (bool) {
-	let hChannel = bot.channels.get('427355139431464981');
-  hChannel.send(member.displayName);
-}
-  
+	let hChannel = bot.channels.get(process.env.TCHANNEL);
+//	let hChannel = bot.channels.get('427355139431464981');
+  hChannel.send('     **'+member.displayName+'**');
+}  
   //427355139431464981  log text channel
   //427352629379727364  General voice channel
 });
-
-bot.login(config.token);
+bot.login(process.env.TOKEN);
+//bot.login(config.token);
