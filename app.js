@@ -15,11 +15,11 @@ bot.on("guildMemberSpeaking", (member, bool) => {
 	let hChannel = bot.channels.get(process.env.TCHANNEL);
 	  // hChannel.send('```css\n '+member.displayName+'```');
 var d = new Date();
-var hour=d.getUTCHours();
-var min=d.getUTCMinutes();
-var sec=d.getUTCSeconds();
+var hour="0"+d.getUTCHours().slice(-2);
+var min="0"+d.getUTCMinutes().slice(-2);
+var sec="0"+d.getUTCSeconds().slice(-2);
 d=d.padStart(2);
-//[11:22:33] .padStart(2,'0')
+//[11:22:33]
 //hChannel.send('___['+hour+':'+min+':'+sec+']   '+member.displayName+'  ');
 	hChannel.send(' '+member.displayName+'  ');		
 	}  
