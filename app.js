@@ -23,7 +23,7 @@ bot.on("ready", () => {
 //  }
 //});
 
-bot.on("guildMemberSpeaking", (member.display_name, bool) => { 
+bot.on("guildMemberSpeaking", (member, bool) => { 
 	if (bool) {
 	let hChannel = bot.channels.get('427355139431464981');
   hChannel.send(member.displayName);
