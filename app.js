@@ -10,17 +10,6 @@ bot.on("ready", () => {
   		//add ffmpeg build pack https://github.com/jayzes/heroku-buildpack-ffmpeg
 });
 
-//bot.on("message", (message) => {
-//	
-//  if (message.content.startsWith("ping")) {
-//    message.channel.send("pong!");
-//  }
-//  if (message.content.startsWith("direct")) {
-//	let hChannel = bot.channels.get('427355139431464981');
-//  hChannel.send('hello');
-//  }
-//});
-
 bot.on("guildMemberSpeaking", (member, bool) => { 
 	if (bool) {
 	let hChannel = bot.channels.get(process.env.TCHANNEL);
