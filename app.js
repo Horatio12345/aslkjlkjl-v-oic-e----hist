@@ -44,19 +44,19 @@ var sec=String("0"+d.getUTCSeconds()).slice(-2);
   if (oldUserChannel === undefined) {
   	//user joined channel
   	vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+'`'+newMember.user.username+'#'+newMember.user.discriminator+'` ***JOINED*** _'+newUserChannel.name+'_');
-  	ttsChannel.send(newMember.displayName+' ***JOINED*** _'+newUserChannel.name.replace(/\s/g, '')+'_');
+  	ttsChannel.send(newMember.displayName+' JOINED '+newUserChannel.name.replace(/\s/g, '')+'');
   }
   else {
 		if (newUserChannel === undefined) {
 			//user left channel
 			vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***LEFT*** _'+oldUserChannel.name+'_');
-			ttsChannel.send(oldMember.displayName+' ***LEFT*** _'+oldUserChannel.name.replace(/\s/g, '')+'_');
+			ttsChannel.send(oldMember.displayName+' LEFT '+oldUserChannel.name.replace(/\s/g, '')+'');
 			}
 		else {
 			//user switched channel
 			if (newUserChannel!=oldUserChannel) {
 				vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***SWITCHED*** _'+oldUserChannel.name+'_ to _'+newUserChannel.name+'_');
-				ttsChannel.send(oldMember.displayName+' ***SWITCHED*** _'+oldUserChannel.name.replace(/\s/g, '')+'_ to _'+newUserChannel.name.replace(/\s/g, '')+'_');
+				ttsChannel.send(oldMember.displayName+' SWITCHED '+oldUserChannel.name.replace(/\s/g, '')+' to '+newUserChannel.name.replace(/\s/g, '')+'');
 				//str = str.replace(/\s/g, '');
 				}
 			}
