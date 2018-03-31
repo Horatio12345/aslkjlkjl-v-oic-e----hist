@@ -24,5 +24,29 @@ hChannel.send('`['+hour+':'+min+':'+sec+']`   '+member.displayName+' ');
 	}  
 
 });
+bot.on("voiceStateUpdate", (oldMember, newMember) =>{
+  let newUserChannel = newMember.voiceChannel
+  let oldUserChannel = oldMember.voiceChannel
+  let vlChannel = bot.channels.get(process.env.VLCHANNEL);
+
+var d = new Date();
+var hour=String("0"+d.getUTCHours()).slice(-2);
+var min=String("0"+d.getUTCMinutes()).slice(-2);
+var sec=String("0"+d.getUTCSeconds()).slice(-2);
+  if (oldUserChannel === undefined) {
+  	//user joined channel
+  	vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+' JOINS '+newUserChannel);
+  }
+  else {
+		if (newUserChannel === undefined) {
+			//user left channel
+			vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+' LEAVES '+oldUserChannel);
+			}
+		else {
+			//user switched channel
+			vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+' SWITCHES '+oldUserChannel+' to '+newUserChannel);
+			}
+  }		
+});
 bot.login(process.env.TOKEN);
 //bot.login(config.token);
