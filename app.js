@@ -35,16 +35,18 @@ var min=String("0"+d.getUTCMinutes()).slice(-2);
 var sec=String("0"+d.getUTCSeconds()).slice(-2);
   if (oldUserChannel === undefined) {
   	//user joined channel
-  	vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+' JOINS '+newUserChannel);
+  	vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+'-'+oldMember.user.username+' ***JOINED*** _'+newUserChannel+'_');
   }
   else {
 		if (newUserChannel === undefined) {
 			//user left channel
-			vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+' LEAVES '+oldUserChannel);
+			vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'-'+oldMember.user.username+' ***LEFT*** _'+oldUserChannel+'_');
 			}
 		else {
 			//user switched channel
-			vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+' SWITCHES '+oldUserChannel+' to '+newUserChannel);
+			if (newUserChannel!=oldUserChannel) {
+				vlChannel.send('`['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'-'+oldMember.user.username+' ***SWITCHED*** _'+oldUserChannel+'_ to _'+newUserChannel+'_');
+				}
 			}
   }		
 });
