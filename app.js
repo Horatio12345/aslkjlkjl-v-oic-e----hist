@@ -29,8 +29,8 @@ var sec=String("0"+d.getUTCSeconds()).slice(-2);
 });
 
 bot.on("voiceStateUpdate", (oldMember, newMember) =>{
-  let newUserChannel = String(newMember.voiceChannel).substr(1)
-  let oldUserChannel = String(oldMember.voiceChannel).substr(1)
+  let newUserChannel = newMember.voiceChannel
+  let oldUserChannel = oldMember.voiceChannel
   let vlChannel = bot.channels.get(process.env.VLCHANNEL);
   let ttsChannel = bot.channels.get(process.env.TTSCHANNEL);
 
