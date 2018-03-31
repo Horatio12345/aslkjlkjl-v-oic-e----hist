@@ -50,7 +50,7 @@ var sec=String("0"+d.getUTCSeconds()).slice(-2);
 		if (newUserChannel === undefined) {
 			//user left channel
 			vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***LEFT*** _'+oldUserChannel+'_');
-			ttsChannel.send(oldMember.displayName)+' ***LEFT*** _'+oldUserChannel+'_');
+			ttsChannel.send(oldMember.displayName+' ***LEFT*** _'+oldUserChannel+'_');
 			}
 		else {
 			//user switched channel
