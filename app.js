@@ -30,6 +30,9 @@ bot.on("voiceStateUpdate", (oldMember, newMember) =>{
   let vlChannel = bot.channels.get(process.env.VLCHANNEL);
 
 var d = new Date();
+var year=String(d.getUTCFullYear());
+var month=String("0"+(d.getUTCMonth()+1)).slice(-2);
+var day=String("0"+d.getUTCDate()).slice(-2);
 var hour=String("0"+d.getUTCHours()).slice(-2);
 var min=String("0"+d.getUTCMinutes()).slice(-2);
 var sec=String("0"+d.getUTCSeconds()).slice(-2);
