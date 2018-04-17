@@ -70,7 +70,7 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.content.indexOf("z join voice") !== 0) return;
    
-  if(message.content === "z join voice") {
+  if(message.content === "z will you please join fleet voice") {
   	// join the correct voice channel 
   let vChannel = bot.channels.get(process.env.VCHANNEL);  
    vChannel.join()
