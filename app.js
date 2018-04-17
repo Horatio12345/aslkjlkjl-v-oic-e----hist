@@ -62,6 +62,26 @@ var sec=String("0"+d.getUTCSeconds()).slice(-2);
 			}
   }		
 });
+bot.on("message", async message => {
+  
+  if(message.author.bot) return;
+  if(message.content.indexOf("z join voice") !== 0) return;
+  
+//  // Here we separate our "command" name, and our "arguments" for the command. 
+//  // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
+//  // command = say
+//  // args = ["Is", "this", "the", "real", "life?"]
+//  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+//  const command = args.shift().toLowerCase();
+   
+  if(command === "z join voice") {
+  	// join the correct voice channel 
+  let vChannel = bot.channels.get(process.env.VCHANNEL);  
+   vChannel.join()
+   		.then(connection => console.log('Connected'))
+  		.catch(console.error);   
+  	 }
+});
 
 bot.login(process.env.TOKEN);
 //bot.login(config.token);
