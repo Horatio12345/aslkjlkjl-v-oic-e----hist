@@ -43,19 +43,22 @@ var min=String("0"+d.getUTCMinutes()).slice(-2);
 var sec=String("0"+d.getUTCSeconds()).slice(-2);
   if (oldUserChannel === undefined) {
   	//user joined channel
-  	vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+'`'+newMember.user.username+'#'+newMember.user.discriminator+'` ***JOINED*** _'+newUserChannel.name+'_');
+  	//vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+'`'+newMember.user.username+'#'+newMember.user.discriminator+'` ***JOINED*** _'+newUserChannel.name+'_');
+	vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+newMember.displayName+'`'+newMember.user.id+'` ***JOINED*** _'+newUserChannel.name+'_');
   	ttsChannel.send(newMember.displayName+' JOINED '+newUserChannel.name.replace(/\s/g, '')+'', { tts: true});
   }
   else {
 		if (newUserChannel === undefined) {
 			//user left channel
-			vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***LEFT*** _'+oldUserChannel.name+'_');
+			//vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***LEFT*** _'+oldUserChannel.name+'_');
+			vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.id+'` ***LEFT*** _'+oldUserChannel.name+'_');
 			ttsChannel.send(oldMember.displayName+' LEFT '+oldUserChannel.name.replace(/\s/g, '')+'', { tts: true});
 			}
 		else {
 			//user switched channel
 			if (newUserChannel!=oldUserChannel) {
-				vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***SWITCHED*** _'+oldUserChannel.name+'_ to _'+newUserChannel.name+'_');
+			//	vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.username+'#'+oldMember.user.discriminator+'` ***SWITCHED*** _'+oldUserChannel.name+'_ to _'+newUserChannel.name+'_');
+				vlChannel.send('`'+year+'-'+month+'-'+day+' ['+hour+':'+min+':'+sec+'] `  '+oldMember.displayName+'`'+oldMember.user.id+'` ***SWITCHED*** _'+oldUserChannel.name+'_ to _'+newUserChannel.name+'_');
 				ttsChannel.send(oldMember.displayName+' SWITCHED '+oldUserChannel.name.replace(/\s/g, '')+' to '+newUserChannel.name.replace(/\s/g, '')+'', { tts: true});
 				//str = str.replace(/\s/g, '');
 				}
@@ -66,19 +69,12 @@ bot.on("message", async message => {
   
   if(message.author.bot) return;
   if(message.content.indexOf("z join voice") !== 0) return;
-  
-//  // Here we separate our "command" name, and our "arguments" for the command. 
-//  // e.g. if we have the message "+say Is this the real life?" , we'll get the following:
-//  // command = say
-//  // args = ["Is", "this", "the", "real", "life?"]
-//  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-//  const command = args.shift().toLowerCase();
    
   if(message.content === "z join voice") {
   	// join the correct voice channel 
   let vChannel = bot.channels.get(process.env.VCHANNEL);  
    vChannel.join()
-   		.then(connection => console.log('Connected'))
+   		.then(connection => console.log('Connected - manual '+message.author.id))
   		.catch(console.error);   
   	 }
 });
