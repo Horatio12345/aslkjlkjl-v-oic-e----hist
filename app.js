@@ -75,7 +75,7 @@ bot.on("message", async message => {
   	// join the correct voice channel 
   let vChannel = bot.channels.get(process.env.VCHANNEL);  
    vChannel.join()
-   		.then(connection => console.log('Connected - manual. user ID= '+message.author.id))
+   		.then(connection => console.log('Connected - manual. User ID= '+message.author.id))
   		.catch(console.error);   
   	 }
 });
