@@ -74,7 +74,7 @@ bot.on("message", async message => {
 //  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 //  const command = args.shift().toLowerCase();
    
-  if(command === "z join voice") {
+  if(message.content === "z join voice") {
   	// join the correct voice channel 
   let vChannel = bot.channels.get(process.env.VCHANNEL);  
    vChannel.join()
