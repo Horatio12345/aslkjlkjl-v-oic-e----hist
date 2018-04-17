@@ -69,13 +69,13 @@ var sec=String("0"+d.getUTCSeconds()).slice(-2);
 bot.on("message", async message => {
   
   if(message.author.bot) return;
-  if(message.content.indexOf("z join voice") !== 0) return;
+  if(message.content.indexOf("z join fleet voice please") !== 0) return;
    
-  if(message.content === "z will you please join fleet voice") {
+  if(message.content === "z join fleet voice please") {
   	// join the correct voice channel 
   let vChannel = bot.channels.get(process.env.VCHANNEL);  
    vChannel.join()
-   		.then(connection => console.log('Connected - manual '+message.author.id))
+   		.then(connection => console.log('Connected - manual. user ID= '+message.author.id))
   		.catch(console.error);   
   	 }
 });
